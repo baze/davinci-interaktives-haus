@@ -1,0 +1,17 @@
+{
+  "name": "WP Starter Theme",
+  "version": "0.1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "respond": "~1.4.2",
+    "font-awesome": "^4.6.0",
+    "normalize-scss": "^3.0.3"
+  }
+}

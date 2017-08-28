@@ -1,0 +1,28 @@
+<div class="flex-item map-container" style="
+{% if map.left %}
+    left: {{ map.left }};
+{% endif %}
+{% if map.top %}
+    top: {{ map.top }};
+{% endif %}
+">
+    <svg class="map" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         style="
+         {% if map.image %}
+             background-image: url('dest/img/{{ map.image }}');
+         {% endif %}
+            "
+         viewBox="0 0 1200 875">
+        {% for item in map.items %}
+            <g id="{{ item.title }}">
+                <title>{{ item.title }}</title>
+                <desc>
+                    <image xlink:href="{{ item.image | default('http://placehold.it/320x200') }}" alt=""></image>
+                    <p>{{ item.description }}</p>
+                </desc>
+                {{ item.path | raw }}
+            </g>
+        {% endfor %}
+    </svg>
+</div>

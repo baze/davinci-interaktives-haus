@@ -1,0 +1,89 @@
+$animation-duration--short: 0.3s;
+$animation-duration--long: 2s;
+
+@keyframes blink {
+  0% {
+    fill: transparentize($map-path-color, 1);
+  }
+  100% {
+    opacity: 1;
+    fill: transparentize($map-path-color, 0.5);
+  }
+}
+
+@keyframes growFromLeft {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+  }
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate3d(1, 0, 0, -5deg) rotate3d(0, 1, 0, -5deg);
+  }
+  25% {
+    transform: rotate3d(1, 0, 0, -5deg) rotate3d(0, 1, 0, 5deg);
+  }
+  50% {
+    transform: rotate3d(1, 0, 0, 5deg) rotate3d(0, 1, 0, 5deg);
+  }
+  75% {
+    transform: rotate3d(1, 0, 0, 5deg) rotate3d(0, 1, 0, -5deg);
+  }
+  100% {
+    transform: rotate3d(1, 0, 0, -5deg) rotate3d(0, 1, 0, -5deg);
+  }
+}
+
+@keyframes growFromRight {
+  0% {
+    width: 300%;
+    left: 100%;
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    left: -200%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    max-height: 3rem;
+    //transform: scale(0.8) rotate(0deg);
+  }
+  3% {
+    opacity: .25;
+  }
+  6% {
+    opacity: 0;
+  }
+  9% {
+    opacity: .5;
+    //max-height: 0;
+  }
+  12% {
+    opacity: .25;
+  }
+  15% {
+    opacity: 1;
+    max-height: 3rem;
+    //max-height: 0;
+  }
+  100% {
+    max-height: 999px;
+    //transform: scale(1) rotate(-1deg);
+  }
+}

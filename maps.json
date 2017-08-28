@@ -1,0 +1,91 @@
+{
+  "backgroundImage": "DAV_AH1_v1.jpg",
+  "maps" : [
+    {
+      "title": "HWR",
+      "path": "M400.6,186.8H604v97.7H400.6V186.8z",
+      "images": [
+        { "url" : "hwr-1.jpg" }
+      ]
+    },
+    {
+      "title": "Diele",
+      "path": "M613,186.8h151v97.7H613V186.8z",
+      "images": [
+        {
+          "url": "diele-1.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Gäste-WC",
+      "path": "M771,186.8h100v97.7H771V186.8z",
+      "images": [
+        {
+          "url": "buero-2.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Büro",
+      "path": "M876.1,186.8h205.1v150.8H876.1V186.8z",
+      "images": [
+        {
+          "url": "buero-1.jpg"
+        },
+        {
+          "url": "buero-2.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Schlafzimmer",
+      "path": "M771,342.9h310.3v153H771V342.9z",
+      "images": [
+        {
+          "url": "schlafzimmer-1.jpg"
+        },
+        {
+          "url": "schlafzimmer-2.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Esszimmer",
+      "path": "M400.6,292H764v285.3H400.6V292z",
+      "images": [
+        {
+          "url": "kueche-1.jpg"
+        },
+        {
+          "url": "kueche-2.jpg"
+        },
+        {
+          "url": "kueche-3.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Bad",
+      "path": "M928.3,502.4h153v206h-153V502.4z",
+      "images": [
+        {
+          "url": "bad-1.jpg"
+        },
+        {
+          "url": "bad-2.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Küche",
+      "path": "M771,502.4h152.5v206H771V502.4z",
+      "images": [
+      ]
+    }
+  ],
+  "slideshow" : false,
+  "slideshowDelay" : 0,
+  "slideshowEnabled" : false,
+  "slideshowSpeed" : 5000
+}

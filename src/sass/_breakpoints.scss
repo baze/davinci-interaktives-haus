@@ -1,0 +1,47 @@
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+$grid-max-width: 1280px;
+
+$breakpoint-small: max-width 30em;
+
+$breakpoint-small-medium: 30em;
+
+$breakpoint-medium: 48em;
+
+$breakpoint-wide: 60em;
+
+$breakpoint-huge: 75em;
+
+.breakpoints:after {
+  position: fixed;
+  right: 0;
+  //top: 0;
+  bottom: 0;
+  background: rgba(255, 0, 0, 0.25);
+  border: 3px solid rgba(255, 0, 0, 1.0);
+  color: rgba(255, 0, 0, 1.0);
+  margin: 1rem;
+  padding: 0.5rem;
+  content: "$breakpoint goes here...";
+  z-index: 9999;
+
+  @include breakpoint($breakpoint-small) {
+    content: "Small"
+  }
+  @include breakpoint($breakpoint-small-medium) {
+    content: "Small-Medium"
+  }
+  @include breakpoint($breakpoint-medium) {
+    content: "Medium"
+  }
+  @include breakpoint($breakpoint-wide) {
+    content: "Wide"
+  }
+  @include breakpoint($breakpoint-huge) {
+    content: "HUGE"
+  }
+}
+
+.no-mediaqueries .breakpoints:after {
+  content: "No Media Queries available!";
+}

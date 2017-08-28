@@ -1,0 +1,223 @@
+body {
+  perspective: 700em;
+
+  //background-image: url("../img/bg-house--stock.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    background-color: $secondary-color;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    z-index: 10;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  flex-direction: column;
+
+  margin: auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.root {
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  //height: 0;
+  //padding-bottom: percentage(1748/2480);
+
+  .maps-background-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  box-shadow: 0 0 5rem transparentize($primary-color, 0.75);
+
+  //background-image: url("../img/bg-house--stock.jpg");
+  background-repeat: no-repeat;
+  //background-size: 100% auto;
+  background-size: cover;
+  background-position: center top;
+
+  transform-style: preserve-3d;
+  transition: transform 0.1s;
+
+  &.is-slideshow {
+    animation-name: tilt;
+    animation-duration: $animation-duration--long * 5;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  &.is-active {
+    //transform: translateZ(-1000px);
+    transform: scale(0.8);
+  }
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  align-items: center;
+
+  &.holds-map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  > .map {
+    @extend %map-paths;
+    @extend %map-paths--highlight;
+  }
+
+  .flex-item {
+    @extend %overlay;
+
+    > .map {
+      @extend %map-paths;
+      @extend %map-paths--highlight;
+    }
+  }
+
+
+
+  .info {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    width: 33%;
+    //pointer-events: none;
+
+    transform: translateZ($layerItems);
+
+    .info-content {
+      transition: $animation-duration--long;
+      max-height: 0;
+      overflow: hidden;
+      //background: transparentize($primary-color, .3);
+      background: $white;
+      color: $highlight-color-1;
+
+      animation-name: fadeIn;
+      animation-duration: $animation-duration--long;
+      animation-delay: $animation-duration--short;
+    }
+
+    &.is-shown {
+      display: block;
+      box-shadow: 0 4px 0.45em 0 rgba(0, 0, 0, 0.15);
+
+      &.is-done {
+        .info-content {
+          max-height: 999px;
+        }
+      }
+
+      &::before,
+      &::after {
+        display: block;
+        content: '';
+        z-index: 100;
+        position: absolute;
+        background: $highlight-color-1;
+      }
+
+      &::before {
+        width: 0;
+        height: 2px;
+        left: -200%;
+        top: 100%;
+        opacity: 0;
+
+        animation-name: growFromRight;
+        animation-duration: $animation-duration--short;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-delay: 1.3s;
+      }
+
+      &::after {
+        width: 200%;
+        height: 2px;
+        left: -200%;
+        top: 0;
+
+        animation-name: growFromLeft;
+        animation-duration: $animation-duration--short;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        opacity: 0;
+      }
+    }
+
+    h3 {
+      @extend %reset;
+      background: $highlight-color-1;
+      color: $secondary-color;
+      padding: 0.75rem 2rem;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 1rem;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    > button.close {
+      background: lighten($primary-color, 50);
+      width: 20px;
+      height: 20px;
+      top: 0.5rem;
+      right: 0.5rem;
+      border: none;
+      border-radius: 10px;
+      color: $secondary-color;
+      font-size: 10px;
+
+      &:hover {
+        background: lighten($primary-color, 60);
+      }
+
+      &:active {
+        background: lighten($primary-color, 70);
+      }
+    }
+  }
+}
+
+.autoplay {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  color: $white;
+}

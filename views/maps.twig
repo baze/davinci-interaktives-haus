@@ -1,0 +1,10 @@
+{#{% extends 'base.twig' %}#}
+
+{% block content %}
+    <div class="root _tilt _is-slideshow" id="root"
+         v-bind:class="{ 'is-active': active }"
+    >
+        <img v-if="backgroundImage" class="maps-background-image" v-bind:src="backgroundImage">
+        <map-list></map-list>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+
+@import "mixins";
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html, body {
+  max-width: 100%;
+}
+
+body {
+  @extend %reset;
+  //background: $secondary-color;
+  //color: $secondary-color;
+  font-family: Avenir, Calibri, sans-serif;
+
+  > .wrapper {
+    position: relative;
+    //background-color: $secondary-color;
+    min-height: 100vh;
+  }
+}
+
+svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+
+  max-height: 100% !important;
+}
