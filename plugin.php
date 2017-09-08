@@ -28,7 +28,6 @@ class Plugin {
 		add_action( 'wp_enqueue_scripts', [$this, 'enqueue_scripts'] );
 //		add_filter( 'the_content', [$this, 'render'], 99 );
 		add_shortcode( 'interactive_house', [$this, 'shortcode_interactive_house'] );
-
 	}
 
 	function enqueue_scripts() {
