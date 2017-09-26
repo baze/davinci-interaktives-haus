@@ -282,7 +282,7 @@ module.exports = function () {
 
                 <svg class="map" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 1200 850">
+                     viewBox="0 0 1100 775">
                      <hotspot v-for="map in maps" v-bind:item="map"></hotspot>
                 </svg>
                 

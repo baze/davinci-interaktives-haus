@@ -1,15 +1,15 @@
 
 @import "mixins";
 
-*, *:before, *:after {
+/**, *:before, *:after {
   -webkit-box-sizing: border-box !important;
   -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
 
   -webkit-font-smoothing: subpixel-antialiased;
-}
+}*/
 
-html, body {
+/*html, body {
   max-width: 100%;
 }
 
@@ -24,7 +24,7 @@ body {
     //background-color: $secondary-color;
     min-height: 100vh;
   }
-}
+}*/
 
 svg {
   display: block;
